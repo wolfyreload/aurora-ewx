@@ -7,7 +7,7 @@ dnf5 install -y openfortivpn \
         qdirstat
 
 # Downlaod and install Azure data studio
-wget -o azure-data-studio.rpm https://go.microsoft.com/fwlink/?linkid=2301926
+wget https://go.microsoft.com/fwlink/?linkid=2301926 -O azure-data-studio.rpm
 dnf5 install -y ./azure-data-studio.rpm
 
 # Add dotnet install script
