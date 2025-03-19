@@ -13,9 +13,6 @@ FROM ghcr.io/ublue-os/aurora-dx:stable-daily
 ## make modifications desired in your image and install packages by modifying the build.sh script
 ## the following RUN directive does all the things required to run "build.sh" as recommended.
 
-# Copy over any useful system files like custom yum.repos.d
-COPY system_files /
-
 COPY build.sh /tmp/build.sh
 
 RUN mkdir -p /var/lib/alternatives && \
