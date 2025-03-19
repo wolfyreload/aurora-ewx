@@ -10,4 +10,7 @@ dnf5 install -y openfortivpn \
 wget -o azure-data-studio.rpm https://go.microsoft.com/fwlink/?linkid=2301926
 dnf5 install -y ./azure-data-studio.rpm
 
+# Add dotnet install script
+wget https://dot.net/v1/dotnet-install.sh -O /usr/bin/dotnet-install.sh
+chmod +x /usr/bin/dotnet-install.sh
 
