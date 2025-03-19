@@ -1,4 +1,4 @@
-FROM ghcr.io/ublue-os/bazzite-gnome-nvidia:testing
+FROM ghcr.io/ublue-os/aurora-dx:stable-daily
 
 ## Other possible base images include:
 # FROM ghcr.io/ublue-os/bazzite:stable
