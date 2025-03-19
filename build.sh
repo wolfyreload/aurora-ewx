@@ -11,6 +11,9 @@ wget https://go.microsoft.com/fwlink/?linkid=2301926 -O /tmp/azure-data-studio.r
 dnf5 install -y /tmp/azure-data-studio.rpm
 
 # Add dotnet install script
-wget https://dot.net/v1/dotnet-install.sh -O /usr/bin/dotnet-install.sh
-chmod +x /usr/bin/dotnet-install.sh
+wget https://dot.net/v1/dotnet-install.sh -O /usr/bin/dotnet-install
+chmod +x /usr/bin/dotnet-install
 
+# Add nvm installer 
+wget https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh -O /usr/bin/nvm-install
+chmod +x /usr/bin/nvm-install
