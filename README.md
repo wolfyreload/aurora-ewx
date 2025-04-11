@@ -31,3 +31,9 @@ echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm' | sudo 
 ```
 
 Run `nvm install --lts` to install the latest lts version of nodejs
+
+# Install powershell
+
+```
+dotnet tool install --global PowerShell
+```
