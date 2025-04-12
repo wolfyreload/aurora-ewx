@@ -25,3 +25,7 @@ chmod +x /usr/bin/teams_for_linux.appimage
 # Add openfortivpn-webview
 wget https://github.com/gm-vm/openfortivpn-webview/releases/download/v1.2.3-electron/openfortivpn-webview-1.2.3-x86_64.AppImage -O /usr/bin/openfortivpn-webview.appimage
 chmod +x /usr/bin/openfortivpn-webview.appimage
+
+# Add virtualbox 
+wget https://download.virtualbox.org/virtualbox/7.1.6/VirtualBox-7.1-7.1.6_167084_fedora40-1.x86_64.rpm -O /tmp/virtualbox.rpm
+dnf5 install -y /tmp/virtualbox.rpm
