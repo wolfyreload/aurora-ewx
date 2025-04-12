@@ -41,3 +41,7 @@ dotnet tool install --global PowerShell
 # Windows VM
 
 The simplist way to run Windows in a virtual machine is to use this appimage <https://github.com/ivan-hc/VirtualBox-appimage/releases>
+
+# Rebasing to an older image
+
+Open the terminal and run `ewx-rebase-helper` and follow the prompts
