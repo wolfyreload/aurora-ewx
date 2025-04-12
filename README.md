@@ -37,3 +37,7 @@ Run `nvm install --lts` to install the latest lts version of nodejs
 ```
 dotnet tool install --global PowerShell
 ```
+
+# Windows VM
+
+The simplist way to run Windows in a virtual machine is to use this appimage <https://github.com/ivan-hc/VirtualBox-appimage/releases>
