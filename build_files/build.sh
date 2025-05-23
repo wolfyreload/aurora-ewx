@@ -16,7 +16,7 @@ wget https://dot.net/v1/dotnet-install.sh -O /usr/bin/dotnet-install
 chmod +x /usr/bin/dotnet-install
 
 # Add nvm installer 
-wget https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh -O /usr/bin/nvm-install
+wget https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.3/install.sh -O /usr/bin/nvm-install
 chmod +x /usr/bin/nvm-install
 
 # Add teams for Linux
