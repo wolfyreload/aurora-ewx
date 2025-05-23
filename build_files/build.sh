@@ -20,7 +20,7 @@ wget https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.2/install.sh -O /usr/bin
 chmod +x /usr/bin/nvm-install
 
 # Add teams for Linux
-wget https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v1.12.8/teams-for-linux-1.12.8.AppImage -O /usr/bin/teams_for_linux.appimage
+wget https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v2.0.14/teams-for-linux-2.0.14.AppImage -O /usr/bin/teams_for_linux.appimage
 chmod +x /usr/bin/teams_for_linux.appimage
 
 # Add openfortivpn-webview
