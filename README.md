@@ -46,6 +46,10 @@ The simplist way to run Windows in a virtual machine is to use this appimage <ht
 
 Open the terminal and run `ewx-rebase-helper` and follow the prompts
 
+# Default brew packages
+
+`brew install git-credential-oauth gh openjdk sshpass`
+
 # Original Readme
 
 # image-template
