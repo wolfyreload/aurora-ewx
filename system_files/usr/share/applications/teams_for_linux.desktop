@@ -1,0 +1,19 @@
+#!/usr/bin/env xdg-open
+[Desktop Entry]
+Categories=Chat;Network;Office;
+Comment=Unofficial Microsoft Teams client for Linux using Electron. It uses the Web App and wraps it as a standalone application using Electron.
+Exec=/usr/bin/teams_for_linux.appimage --no-sandbox %U
+Icon=teams_for_linux
+MimeType=x-scheme-handler/msteams;
+Name=Teams for Linux
+NoDisplay=false
+Path=
+StartupNotify=true
+StartupWMClass=teams-for-linux
+Terminal=false
+TerminalOptions=
+TryExec=/usr/bin/teams_for_linux.appimage
+Type=Application
+X-AppImage-Version=1.12.8
+X-KDE-SubstituteUID=false
+X-KDE-Username=
