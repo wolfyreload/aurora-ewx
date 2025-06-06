@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+# Check if cookie was captured
+if [ -z "$VPN_URL" ]; then
+    echo '$VPN_URL not populated'
+    exit 1
+fi
+
+COOKIE=$(/usr/bin/openfortivpn-webview.appimage \
+    $VPN_URL:$VPN_PORT \
+    --trusted-cert="${VPN_CERT_SIGNATURE}" | grep "SVPNCOOKIE=" | tr -d '\r')
+
+# Check if cookie was captured
+if [ -z "$COOKIE" ]; then
+    echo "Failed to capture VPN cookie"
+    exit 1
+fi
+
+echo "$COOKIE" | sudo openfortivpn $VPN_URL:$VPN_PORT \
+    -u $VPN_USERNAME \
+    -p $VPN_USER_PASSWORD \
+    --trusted-cert $VPN_CERT_SIGNATURE2 \
+    --set-dns=1 \
+    --pppd-use-peerdns=0 \
+    --cookie-on-stdin
+
