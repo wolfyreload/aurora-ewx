@@ -20,13 +20,16 @@ chmod +x /usr/bin/nvm-install
 
 # Add teams for Linux
 wget \
-   $(curl -s https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest | \
-   jq -r ".assets[] | select(.name | test(\"teams-for-linux-[0-9.]*AppImage\")) | .browser_download_url") \
-   -O /usr/bin/teams_for_linux.appimage
+    $(curl -s https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest | \
+    jq -r ".assets[] | select(.name | test(\"teams-for-linux-[0-9.]*AppImage\")) | .browser_download_url") \
+    -O /usr/bin/teams_for_linux.appimage
 chmod +x /usr/bin/teams_for_linux.appimage
 
 # Add openfortivpn-webview
-wget https://github.com/gm-vm/openfortivpn-webview/releases/download/v1.2.3-electron/openfortivpn-webview-1.2.3-x86_64.AppImage -O /usr/bin/openfortivpn-webview.appimage
+wget \
+     $(curl -s https://api.github.com/repos/gm-vm/openfortivpn-webview/releases/latest | \
+     jq -r ".assets[] | select(.name | test(\".*x86_64[.]AppImage\")) | .browser_download_url") \
+     -O /usr/bin/openfortivpn-webview.appimage
 chmod +x /usr/bin/openfortivpn-webview.appimage
 
 # Enable earlyoom
