@@ -20,4 +20,4 @@
 
 # See more at `earlyoom -h'
 
-EARLYOOM_ARGS="-r 60 -m 5 -s 5 --avoid '(^|/)(teams|TimeTrackerServ|VirtualBoxVM)$'"
+EARLYOOM_ARGS="-r 60 -m 8 -s 8 --avoid '(^|/)(teams|TimeTrackerServ|VirtualBoxVM)$'"
