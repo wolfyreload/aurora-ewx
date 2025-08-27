@@ -20,7 +20,7 @@ chmod +x /usr/bin/nvm-install
 
 # Add teams for Linux
 wget \
-    https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v2.1.0/teams-for-linux-2.1.0.AppImage \
+    https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v2.2.1/teams-for-linux-2.2.1.AppImage \
     -O /usr/bin/teams_for_linux.appimage
 chmod +x /usr/bin/teams_for_linux.appimage
 
