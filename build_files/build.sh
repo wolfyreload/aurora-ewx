@@ -6,9 +6,6 @@ set -ouex pipefail
 dnf5 install -y openfortivpn \
         earlyoom 
 
-# Needed for .net 3.1
-dnf5 install -y libicu-devel 
-
 # Downlaod and install Azure data studio
 wget https://go.microsoft.com/fwlink/?linkid=2324527 -O /tmp/azure-data-studio.rpm
 dnf5 install -y /tmp/azure-data-studio.rpm
