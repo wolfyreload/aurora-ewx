@@ -24,12 +24,6 @@ wget \
     -O /usr/bin/teams_for_linux.appimage
 chmod +x /usr/bin/teams_for_linux.appimage
 
-# Add openfortivpn-webview
-wget \
-    https://github.com/gm-vm/openfortivpn-webview/releases/download/v1.2.3-electron/openfortivpn-webview-1.2.3-x86_64.AppImage \
-    -O /usr/bin/openfortivpn-webview.appimage
-chmod +x /usr/bin/openfortivpn-webview.appimage
-
 # Enable earlyoom
 systemctl enable earlyoom.service
 
