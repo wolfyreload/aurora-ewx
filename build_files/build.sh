@@ -16,7 +16,7 @@ chmod +x /usr/bin/dotnet-install
 
 # Install Volta (Node.js version manager)
 wget https://github.com/volta-cli/volta/releases/download/v2.0.2/volta-2.0.2-linux.tar.gz -O /tmp/volta.tar.gz
-tar -xzf /tmp/volta.tar.gz -C /usr/local
+tar -xzf /tmp/volta.tar.gz -C /usr/bin
 rm /tmp/volta.tar.gz
 
 # Add teams for Linux
