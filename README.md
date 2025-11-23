@@ -21,16 +21,19 @@ echo "export DOTNET_ROOT=$HOME/.dotnet" | sudo tee /etc/profile.d/dotnet.sh
 echo 'export PATH=$PATH:$DOTNET_ROOT:$DOTNET_ROOT/tools' | sudo tee --append /etc/profile.d/dotnet.sh
 ```
 
-# Setup nvm and nodejs
+# Setup Volta and nodejs
 
-run `install-nvm`
+Volta is already installed in the image. To install the latest LTS version of Node.js, run:
 
+```bash
+volta install node
 ```
-echo 'export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"' | sudo tee /etc/profile.d/nvm.sh
-echo '[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm' | sudo tee --append /etc/profile.d/nvm.sh
-```
 
-Run `nvm install --lts` to install the latest lts version of nodejs
+You can also install specific versions:
+
+```bash
+volta install node@20
+```
 
 # Install powershell
 
