@@ -4,7 +4,8 @@ set -ouex pipefail
 
 # this installs a package from fedora repos
 dnf5 install -y openfortivpn \
-        earlyoom 
+        earlyoom \
+        libgdiplus
 
 # Downlaod and install Azure data studio
 wget https://go.microsoft.com/fwlink/?linkid=2324527 -O /tmp/azure-data-studio.rpm
