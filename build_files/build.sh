@@ -26,11 +26,6 @@ wget \
     -O /usr/bin/teams_for_linux.appimage
 chmod +x /usr/bin/teams_for_linux.appimage
 
-# Download and install OpenSnitch (application firewall)
-wget https://github.com/evilsocket/opensnitch/releases/download/v1.7.2/opensnitch-1.7.2-1.x86_64.rpm -O /tmp/opensnitch.rpm
-wget https://github.com/evilsocket/opensnitch/releases/download/v1.7.2/opensnitch-ui-1.7.2-1.noarch.rpm -O /tmp/opensnitch-ui.rpm
-dnf5 install -y /tmp/opensnitch.rpm /tmp/opensnitch-ui.rpm
-
 # Enable earlyoom
 systemctl enable earlyoom.service
 
