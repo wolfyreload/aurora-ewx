@@ -22,7 +22,7 @@ rm /tmp/volta.tar.gz
 
 # Add teams for Linux
 wget \
-    https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v2.6.19/teams-for-linux-2.6.19.AppImage \
+    https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v2.7.13/teams-for-linux-2.7.13.AppImage \
     -O /usr/bin/teams_for_linux.appimage
 chmod +x /usr/bin/teams_for_linux.appimage
 
