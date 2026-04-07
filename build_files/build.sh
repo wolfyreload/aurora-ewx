@@ -15,11 +15,6 @@ dnf5 install -y /tmp/azure-data-studio.rpm
 wget https://dot.net/v1/dotnet-install.sh -O /usr/bin/dotnet-install
 chmod +x /usr/bin/dotnet-install
 
-# Install Volta (Node.js version manager)
-wget https://github.com/volta-cli/volta/releases/download/v2.0.2/volta-2.0.2-linux.tar.gz -O /tmp/volta.tar.gz
-tar -xzf /tmp/volta.tar.gz -C /usr/bin
-rm /tmp/volta.tar.gz
-
 # Add teams for Linux
 wget \
     https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v2.7.13/teams-for-linux-2.7.13.AppImage \
