@@ -11,10 +11,6 @@ dnf5 install -y openfortivpn \
 wget https://go.microsoft.com/fwlink/?linkid=2324527 -O /tmp/azure-data-studio.rpm
 dnf5 install -y /tmp/azure-data-studio.rpm
 
-# Add dotnet install script
-wget https://dot.net/v1/dotnet-install.sh -O /usr/bin/dotnet-install
-chmod +x /usr/bin/dotnet-install
-
 # Add teams for Linux
 wget \
     https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v2.7.13/teams-for-linux-2.7.13.AppImage \
