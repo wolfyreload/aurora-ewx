@@ -2,14 +2,10 @@
 
 set -ouex pipefail
 
-
-
 # this installs a package from fedora repos
 dnf5 install -y openfortivpn \
         earlyoom \
-        libgdiplus \
-        opensnitch \
-        opensnitch-ui
+        libgdiplus
 
 # Downlaod and install Azure data studio
 wget https://go.microsoft.com/fwlink/?linkid=2324527 -O /tmp/azure-data-studio.rpm
@@ -23,9 +19,6 @@ chmod +x /usr/bin/teams_for_linux.appimage
 
 # Enable earlyoom
 systemctl enable earlyoom.service
-
-# Enable opensnitchd
-systemctl enable opensnitchd.service
 
 <<'###BLOCK-COMMENT'
 #!/bin/bash
