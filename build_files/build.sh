@@ -17,16 +17,8 @@ wget \
     -O /usr/bin/teams_for_linux.appimage
 chmod +x /usr/bin/teams_for_linux.appimage
 
-# Add OpenSnitch
-wget https://github.com/evilsocket/opensnitch/releases/download/v1.8.0/opensnitch-1.8.0-1.x86_64.rpm -O /tmp/open-snitch.rpm
-wget https://github.com/evilsocket/opensnitch/releases/download/v1.8.0/opensnitch-ui-1.8.0-1.noarch.rpm -O /tmp/open-snitch-ui.rpm
-dnf5 install -y /tmp/open-snitch.rpm /tmp/open-snitch-ui.rpm
-
 # Enable earlyoom
 systemctl enable earlyoom.service
-
-# Enable OpenSnitch
-systemctl enable opensnitchd.service
 
 <<'###BLOCK-COMMENT'
 #!/bin/bash
