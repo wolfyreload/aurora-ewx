@@ -13,7 +13,7 @@ dnf5 install -y /tmp/azure-data-studio.rpm
 
 # Add teams for Linux
 wget \
-    https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v2.8.0/teams-for-linux-2.8.0.AppImage \
+    https://github.com/IsmaelMartinez/teams-for-linux/releases/download/v2.9.0/teams-for-linux-2.9.0.AppImage \
     -O /usr/bin/teams_for_linux.appimage
 chmod +x /usr/bin/teams_for_linux.appimage
 
