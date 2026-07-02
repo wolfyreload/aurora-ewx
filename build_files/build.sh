@@ -11,17 +11,6 @@ dnf5 install -y openfortivpn \
 wget https://go.microsoft.com/fwlink/?linkid=2324527 -O /tmp/azure-data-studio.rpm
 dnf5 install -y /tmp/azure-data-studio.rpm
 
-# Add teams for Linux (latest stable AppImage, excluding prereleases)
-TEAMS_APPIMAGE_URL="$(
-    curl -fsSL "https://api.github.com/repos/IsmaelMartinez/teams-for-linux/releases/latest" \
-        | grep -o '"browser_download_url": "https://github.com/IsmaelMartinez/teams-for-linux/releases/download/[^"]*teams-for-linux-[0-9.]*\.AppImage"' \
-        | grep -v 'arm64\|armv7l' \
-        | head -1 \
-        | cut -d'"' -f4
-)"
-wget "${TEAMS_APPIMAGE_URL}" -O /usr/bin/teams_for_linux.appimage
-chmod +x /usr/bin/teams_for_linux.appimage
-
 # Enable earlyoom
 systemctl enable earlyoom.service
 
