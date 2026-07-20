@@ -2,7 +2,7 @@
 FROM scratch AS ctx
 COPY build_files /
 
-FROM ghcr.io/ublue-os/aurora-dx:stable-daily
+FROM ghcr.io/ublue-os/aurora:stable-daily
 
 COPY system_files /
 RUN --mount=type=bind,from=ctx,source=/,target=/ctx \
