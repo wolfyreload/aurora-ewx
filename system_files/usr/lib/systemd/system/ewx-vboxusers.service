@@ -1,0 +1,12 @@
+[Unit]
+Description=Add wheel users to the vboxusers group
+After=systemd-sysusers.service
+ConditionPathExists=/usr/libexec/ewx-add-vboxusers
+
+[Service]
+Type=oneshot
+ExecStart=/usr/libexec/ewx-add-vboxusers
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

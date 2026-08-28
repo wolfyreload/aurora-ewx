@@ -39,3 +39,6 @@ gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
 sed -i "s/enabled=.*/enabled=0/g" /etc/yum.repos.d/vscode.repo
 dnf5 -y install --enablerepo=code code
+
+# VirtualBox (RPMFusion) plus kernel modules built for this image's kernel
+bash /ctx/virtualbox.sh

@@ -1,0 +1,15 @@
+#!/usr/bin/bash
+set -euo pipefail
+
+# VirtualBox's /dev/vboxdrv is group-owned by vboxusers. Add wheel users so
+# the desktop account can use VirtualBox without a manual usermod after rebase.
+getent group vboxusers >/dev/null || groupadd -r -f vboxusers
+
+wheel_users="$(getent group wheel | cut -d: -f4 || true)"
+IFS=',' read -ra users <<< "${wheel_users}"
+for user in "${users[@]}"; do
+    [[ -z "${user}" ]] && continue
+    if ! id -nG "${user}" | grep -qw vboxusers; then
+        usermod -aG vboxusers "${user}"
+    fi
+done

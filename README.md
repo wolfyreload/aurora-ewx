@@ -16,9 +16,15 @@ rpm-ostree rebase ostree-image-signed:docker://ghcr.io/wolfyreload/aurora-ewx:da
 dotnet tool install --global PowerShell
 ```
 
-# Windows VM
+# VirtualBox
 
-The simplist way to run Windows in a virtual machine is to use this appimage <https://github.com/ivan-hc/VirtualBox-appimage/releases>
+VirtualBox from RPMFusion is installed in this image, including host kernel modules (`vboxdrv`, `vboxnetadp`, `vboxnetflt`) built for the kernel in the image.
+
+After rebasing and rebooting, wheel users are added to the `vboxusers` group automatically. Log out and back in (or reboot) so the new group applies, then launch VirtualBox from the app menu.
+
+If `/dev/vboxdrv` is missing and `sudo modprobe vboxdrv` reports `Key was rejected by service`, Secure Boot is blocking the unsigned out-of-tree modules. Disable Secure Boot for VirtualBox to load.
+
+Oracle's Extension Pack (USB 2.0/3.0, RDP, PXE) is not included; it is under Oracle's Personal Use and Evaluation License and has to be baked into the image if you need it.
 
 # Rebasing to an older image
 
