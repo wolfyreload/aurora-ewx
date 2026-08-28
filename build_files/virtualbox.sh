@@ -31,12 +31,34 @@ install_kernel_devel() {
 
 install_kernel_devel
 
-# RPMFusion is present on Aurora images but individual repos may be disabled.
+# Aurora dropped RPMFusion in favor of Negativo17. Add the free repo for this
+# install only, then leave it disabled in the image (same as docker-ce / vscode).
+install_rpmfusion_free() {
+    local release
+    release="$(rpm -E %fedora)"
+    if [[ ! -f /etc/yum.repos.d/rpmfusion-free.repo ]]; then
+        dnf5 -y install --nogpgcheck \
+            "https://mirrors.rpmfusion.org/free/fedora/rpmfusion-free-release-${release}.noarch.rpm"
+    fi
+    sed -i 's/^enabled=.*/enabled=0/' /etc/yum.repos.d/rpmfusion-free*.repo
+    echo "RPMFusion repos after install:"
+    ls -l /etc/yum.repos.d/rpmfusion* || true
+    dnf5 -y repolist --all | grep -i rpmfusion || true
+}
+
 install_virtualbox() {
-    dnf5 -y install VirtualBox VirtualBox-server akmod-VirtualBox && return 0
-    dnf5 -y install --enablerepo=rpmfusion-free --enablerepo=rpmfusion-free-updates \
-        VirtualBox VirtualBox-server akmod-VirtualBox && return 0
-    dnf5 -y install --enablerepo=rpmfusion-free --enablerepo=rpmfusion-free-updates \
+    install_rpmfusion_free
+    # fedora-multimedia (Negativo17) conflicts with RPMFusion if both are used.
+    dnf5 -y install \
+        --disablerepo='fedora-multimedia' \
+        --enablerepo=rpmfusion-free \
+        --enablerepo=rpmfusion-free-updates \
+        VirtualBox VirtualBox-server akmod-VirtualBox \
+        && return 0
+    dnf5 -y install \
+        --disablerepo='fedora-multimedia' \
+        --enablerepo=rpmfusion-free \
+        --enablerepo=rpmfusion-free-updates \
         --enablerepo=rpmfusion-free-updates-testing \
         VirtualBox VirtualBox-server akmod-VirtualBox
 }
