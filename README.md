@@ -24,6 +24,22 @@ The simplist way to run Windows in a virtual machine is to use this appimage <ht
 
 Open the terminal and run `ewx-rebase-helper` and follow the prompts
 
+# Microsoft Intune
+
+This image ships the RHEL 10 `intune-portal` / identity broker packages and Microsoft Edge. The RPMs still expect `/opt/microsoft`, but the files are stored under `/usr/lib/opt/microsoft` so `/opt` can stay writable; a tmpfiles symlink recreates `/opt/microsoft` at boot.
+
+Microsoft does not officially support Fedora or Aurora, so enrollment depends on your tenant's compliance policies.
+
+After rebasing to a build that includes Intune and rebooting:
+
+1. Sign in graphically so `gnome-keyring` can unlock with your account password. Intune on KDE needs the GNOME keyring Secret portal, not KWallet.
+2. Open **Microsoft Intune** and sign in with your work account.
+3. Open **Microsoft Edge** and sign in with the same account. Conditional Access for Microsoft 365 on Linux is enforced through Edge.
+
+If login fails with `Misconfiguration(0)` or `[4kv4v]`, log out and back in, then confirm `busctl --user list | grep -i secret` shows `org.freedesktop.secrets`. You can also create a `login` keyring in Seahorse (Passwords and Keys) whose password matches your user password.
+
+Org policies commonly also require LUKS disk encryption and password complexity. This image does not spoof `/etc/os-release`; if your tenant requires Ubuntu or RHEL by name, compliance may still fail even after a successful enroll.
+
 # Default brew packages
 
 `brew install git-credential-oauth gh openjdk sshpass`
